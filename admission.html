@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Malek Molla High School Admission | ভর্তি তথ্য">
+  <title>Admission - Malek Molla High School</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Malek Molla High School</h1>
+    <p>Admission Information | ভর্তি সংক্রান্ত তথ্য</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="teacher.html">Teacher</a></li>
+        <li><a href="student.html">Student</a></li>
+        <li><a href="notice.html">Notice</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="result.html">Result</a></li>
+        <li><a href="login.html">Admin Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <h2>Admission Guidelines</h2>
+      <p>Welcome to the admission section. Please read the following information carefully before applying.</p>
+      <ul style="text-align: left; max-width: 800px; margin: auto;">
+        <li>✔ Admission starts: <strong>November 1</strong></li>
+        <li>✔ Last date to apply: <strong>December 15</strong></li>
+        <li>✔ Required documents: SSC Marksheet, Birth Certificate, Passport-size Photo</li>
+        <li>✔ Admission Test: <strong>December 20</strong></li>
+        <li>✔ Contact: 01234-567890</li>
+      </ul>
+    </section>
+
+    <section class="page-section">
+      <h2>Online Admission Form</h2>
+      <form id="admissionForm" style="max-width: 500px; margin: auto; text-align: left;">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="dob">Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="class">Class:</label><br>
+        <select id="class" name="class" required>
+          <option value="">Select Class</option>
+          <option value="6">Class 6</option>
+          <option value="7">Class 7</option>
+          <option value="8">Class 8</option>
+          <option value="9">Class 9</option>
+          <option value="10">Class 10</option>
+        </select><br><br>
+
+        <label for="guardian">Guardian's Name:</label><br>
+        <input type="text" id="guardian" name="guardian" required><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <button type="submit">Submit Application</button>
+      </form>
+      <p id="successMsg" style="color: green; text-align: center; margin-top: 20px;"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Malek Molla High School</p>
+  </footer>
+
+  <script>
+    document.getElementById("admissionForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      document.getElementById("successMsg").innerText = `Thank you, ${name}! Your application has been submitted.`;
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="School Notices | Malek Molla High School">
+  <title>Notice - Malek Molla High School</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Malek Molla High School</h1>
+    <p>Latest School Notices | সর্বশেষ নোটিশ</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="teacher.html">Teacher</a></li>
+        <li><a href="student.html">Student</a></li>
+        <li><a href="notice.html">Notice</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="result.html">Result</a></li>
+        <li><a href="login.html">Admin Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <h2>All Notices</h2>
+      <ul id="noticeList" style="max-width: 800px; margin: auto; text-align: left; padding: 10px;"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Malek Molla High School</p>
+  </footer>
+
+  <script>
+    // Sample notices – later can be loaded from storage or server
+    const notices = [
+      { title: "২০২৫ সালের ভর্তি বিজ্ঞপ্তি প্রকাশিত হয়েছে", file: "notices/admission2025.pdf" },
+      { title: "ফাইনাল পরীক্ষার সময়সূচি প্রকাশ", file: "notices/final_exam_schedule.pdf" },
+      { title: "ইংরেজি বিতর্ক প্রতিযোগিতা ১৫ ডিসেম্বর", file: "notices/english_debate.pdf" }
+    ];
+
+    const noticeList = document.getElementById("noticeList");
+
+    notices.forEach(notice => {
+      const li = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = notice.file;
+      link.target = "_blank";
+      link.textContent = notice.title;
+      li.appendChild(link);
+      noticeList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
